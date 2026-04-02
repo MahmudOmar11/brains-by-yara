@@ -846,14 +846,15 @@
         });
     }
 
-    // Hero parallax fade
-    window.addEventListener('scroll', () => {
-        const h = document.querySelector('.hero-about-inner');
-        if (h && window.scrollY < window.innerHeight) {
-            h.style.transform = 'translateY(' + (window.scrollY * 0.12) + 'px)';
-            h.style.opacity = Math.max(0.25, 1 - (window.scrollY / (window.innerHeight * 1.4)));
-        }
-    });
+    // Hero parallax (desktop only — disabled on mobile for usability)
+    if (window.innerWidth > 1024) {
+        window.addEventListener('scroll', () => {
+            const h = document.querySelector('.hero-about-inner');
+            if (h && window.scrollY < window.innerHeight) {
+                h.style.transform = 'translateY(' + (window.scrollY * 0.08) + 'px)';
+            }
+        });
+    }
 </script>
 </body>
 </html>
