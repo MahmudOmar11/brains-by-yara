@@ -705,12 +705,13 @@
         <div class="contact-content">
             <h2>هل ترغبون بحجز محاضرة؟</h2>
             <p>أرسلوا تفاصيل الفعالية أو المحاضرة المطلوبة وسأتواصل معكم في أقرب وقت</p>
-            <div class="contact-form">
-                <div class="form-group"><input type="text" placeholder="الاسم الكامل"></div>
-                <div class="form-group"><input type="email" placeholder="البريد الإلكتروني"></div>
-                <div class="form-group"><input type="tel" placeholder="رقم الهاتف"></div>
+            <form class="contact-form" name="contact" method="POST" data-netlify="true" action="/success.html">
+                <input type="hidden" name="form-name" value="contact">
+                <div class="form-group"><input type="text" name="name" placeholder="الاسم الكامل" required></div>
+                <div class="form-group"><input type="email" name="email" placeholder="البريد الإلكتروني" required></div>
+                <div class="form-group"><input type="tel" name="phone" placeholder="رقم الهاتف"></div>
                 <div class="form-group">
-                    <select id="contactSelect" onchange="toggleOtherField(this)">
+                    <select id="contactSelect" name="lecture" onchange="toggleOtherField(this)">
                         <option value="" disabled selected>اختاروا المحاضرة</option>
                         <option>تعفّن الدماغ</option>
                         <option>دماغ الرجل والمرأة</option>
@@ -724,11 +725,11 @@
                     </select>
                 </div>
                 <div class="form-group full-width" id="otherField" style="display:none;">
-                    <input type="text" placeholder="أخبرونا عن موضوع المحاضرة أو الاستفسار المطلوب">
+                    <input type="text" name="other-topic" placeholder="أخبرونا عن موضوع المحاضرة أو الاستفسار المطلوب">
                 </div>
-                <div class="form-group full-width"><textarea placeholder="أخبرونا المزيد عن الفعالية: التاريخ، عدد الحضور، المكان..."></textarea></div>
-                <div class="form-submit"><button type="button">أرسلوا طلب الحجز</button></div>
-            </div>
+                <div class="form-group full-width"><textarea name="details" placeholder="أخبرونا المزيد عن الفعالية: التاريخ، عدد الحضور، المكان..."></textarea></div>
+                <div class="form-submit"><button type="submit">أرسلوا طلب الحجز</button></div>
+            </form>
         </div>
     </div>
 </section>
@@ -751,11 +752,15 @@
         <h3 id="modalTitle"></h3>
         <div class="modal-subtitle" id="modalSubtitle"></div>
         <div class="modal-desc" id="modalDesc"></div>
-        <div class="form-group"><input type="text" placeholder="الاسم الكامل"></div>
-        <div class="form-group"><input type="email" placeholder="البريد الإلكتروني"></div>
-        <div class="form-group"><input type="tel" placeholder="رقم الهاتف"></div>
-        <div class="form-group"><textarea placeholder="تفاصيل إضافية: التاريخ، المكان، عدد الحضور..."></textarea></div>
-        <button class="modal-submit" onclick="closeModal()">أرسلوا طلب الحجز</button>
+        <form name="booking" method="POST" data-netlify="true" action="/success.html">
+            <input type="hidden" name="form-name" value="booking">
+            <input type="hidden" name="lecture" id="modalLectureField" value="">
+            <div class="form-group"><input type="text" name="name" placeholder="الاسم الكامل" required></div>
+            <div class="form-group"><input type="email" name="email" placeholder="البريد الإلكتروني" required></div>
+            <div class="form-group"><input type="tel" name="phone" placeholder="رقم الهاتف"></div>
+            <div class="form-group"><textarea name="details" placeholder="تفاصيل إضافية: التاريخ، المكان، عدد الحضور..."></textarea></div>
+            <button type="submit" class="modal-submit">أرسلوا طلب الحجز</button>
+        </form>
     </div>
 </div>
 
@@ -801,6 +806,7 @@
         document.getElementById('modalTitle').textContent = t;
         document.getElementById('modalSubtitle').textContent = s;
         document.getElementById('modalDesc').textContent = d;
+        document.getElementById('modalLectureField').value = t;
         document.getElementById('bookingModal').classList.add('show');
         document.body.style.overflow = 'hidden';
     }
