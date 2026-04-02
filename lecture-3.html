@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من الطفولة إلى الجريمة — Brains by Yara</title>
+    <link rel="icon" type="image/png" href="Yara_logo_Sand.png">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --brown:#640D15; --khaki:#D6CBC1; --cream:#F5EAE0; --off-white:#ECEDE6; --near-black:#2f2326; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; }
+        body { font-family:'Tajawal',sans-serif; font-size:1.22rem; background:var(--off-white); color:var(--near-black); overflow-x:hidden; }
+        body::after { content:''; position:fixed; inset:0; z-index:9999; pointer-events:none; opacity:0.012; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-repeat:repeat; background-size:180px; }
+        .lp-nav { position:fixed; top:0; right:0; left:0; z-index:100; padding:1.2rem 5rem; display:flex; justify-content:space-between; align-items:center; background:var(--brown); transition:all 0.5s cubic-bezier(0.16,1,0.3,1); }
+        .lp-nav.scrolled { background:rgba(100,13,21,0.96); backdrop-filter:blur(24px); padding:0.9rem 5rem; box-shadow:0 16px 36px rgba(100,13,21,0.18); }
+        .lp-nav-logo img { height:46px; width:auto; opacity:0.92; transition:opacity 0.3s; }
+        .lp-nav-logo img:hover { opacity:1; }
+        .lp-nav-back { display:flex; align-items:center; gap:0.5rem; text-decoration:none; color:rgba(245,234,224,0.8); font-size:0.95rem; font-weight:500; transition:all 0.3s; padding:0.5rem 1.2rem; border-radius:100px; border:1px solid rgba(245,234,224,0.2); }
+        .lp-nav-back:hover { color:var(--cream); border-color:rgba(245,234,224,0.4); background:rgba(245,234,224,0.08); }
+        .lp-nav-back svg { transition:transform 0.3s; }
+        .lp-nav-back:hover svg { transform:translateX(4px); }
+        .lp-hero { position:relative; min-height:70vh; display:flex; align-items:flex-end; overflow:hidden; }
+        .lp-hero-bg { position:absolute; inset:0; }
+        .lp-hero-bg img { width:100%; height:100%; object-fit:cover; filter:brightness(0.35) saturate(0.6); }
+        .lp-hero-bg::after { content:''; position:absolute; inset:0; background:linear-gradient(to top, rgba(100,13,21,0.9) 0%, rgba(100,13,21,0.4) 40%, rgba(0,0,0,0.2) 100%); }
+        .lp-hero.corporate-hero .lp-hero-bg::after { background:linear-gradient(to top, rgba(100,13,21,0.95) 0%, rgba(100,13,21,0.6) 40%, rgba(100,13,21,0.3) 100%); }
+        .lp-hero-content { position:relative; z-index:2; padding:0 5rem 4rem; max-width:900px; }
+        .lp-hero-num { font-size:5rem; font-weight:900; color:rgba(245,234,224,0.1); line-height:1; margin-bottom:-0.5rem; }
+        .lp-hero-en { font-size:1.1rem; color:rgba(245,234,224,0.5); letter-spacing:2px; text-transform:uppercase; margin-bottom:0.6rem; }
+        .lp-hero h1 { font-size:clamp(2.6rem,5vw,4rem); font-weight:900; color:var(--cream); line-height:1.3; margin-bottom:0.5rem; }
+        .lp-hero .lp-hero-sub { font-size:1.8rem; color:rgba(245,234,224,0.7); font-weight:300; }
+        .lp-hero-tag { display:inline-block; margin-top:1.2rem; padding:0.4rem 1.2rem; border-radius:100px; font-size:0.85rem; font-weight:600; background:rgba(245,234,224,0.15); color:var(--cream); border:1px solid rgba(245,234,224,0.2); }
+
+        .lp-overview { padding:5rem 5rem 4rem; }
+        .lp-overview-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1.1fr 0.9fr; gap:4rem; align-items:start; }
+        .lp-overview-text h2 { font-size:clamp(1.8rem,3vw,2.4rem); font-weight:800; color:var(--brown); margin-bottom:1.5rem; line-height:1.4; }
+        .lp-overview-text p { font-size:1.18rem; line-height:2.1; color:rgba(100,13,21,0.72); font-weight:300; margin-bottom:1.2rem; }
+        .lp-overview-img { border-radius:20px; overflow:hidden; box-shadow:0 24px 56px rgba(100,13,21,0.1); border:1px solid rgba(100,13,21,0.08); }
+        .lp-overview-img img { width:100%; height:100%; object-fit:cover; display:block; filter:brightness(0.95) saturate(0.85); transition:all 0.6s; }
+        .lp-overview-img:hover img { filter:brightness(1) saturate(1); transform:scale(1.03); }
+        .lp-details { padding:0 5rem 4rem; }
+        .lp-details-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+        .lp-detail-card { background:rgba(245,234,224,0.6); border:1px solid rgba(100,13,21,0.06); border-radius:16px; padding:1.8rem; text-align:center; transition:all 0.4s; }
+        .lp-detail-card:hover { transform:translateY(-4px); box-shadow:0 16px 36px rgba(100,13,21,0.08); }
+        .lp-detail-card .detail-label { font-size:0.82rem; font-weight:600; color:var(--brown); opacity:0.6; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:0.5rem; }
+        .lp-detail-card .detail-value { font-size:1.2rem; font-weight:700; color:var(--brown); }
+        .lp-topics { padding:4rem 5rem 5rem; background:linear-gradient(180deg, rgba(225,213,201,0.25) 0%, rgba(245,234,224,0.7) 50%, rgba(236,237,230,0.5) 100%); }
+        .lp-topics-inner { max-width:1100px; margin:0 auto; }
+        .lp-topics h2 { font-size:clamp(1.8rem,3vw,2.4rem); font-weight:800; color:var(--brown); text-align:center; margin-bottom:0.6rem; }
+        .lp-topics-sub { text-align:center; font-size:1.12rem; color:rgba(100,13,21,0.6); font-weight:300; margin-bottom:3rem; max-width:550px; margin-left:auto; margin-right:auto; }
+        .lp-topics-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.3rem; }
+        .lp-topic-card { background:rgba(255,255,255,0.65); border:1px solid rgba(100,13,21,0.06); border-radius:18px; padding:2rem; transition:all 0.5s cubic-bezier(0.16,1,0.3,1); position:relative; overflow:hidden; }
+        .lp-topic-card:hover { transform:translateY(-5px); background:rgba(255,255,255,0.9); box-shadow:0 20px 48px rgba(100,13,21,0.08); border-color:rgba(100,13,21,0.12); }
+        .lp-topic-icon { font-size:2.2rem; margin-bottom:1rem; display:block; }
+        .lp-topic-card h3 { font-size:1.18rem; font-weight:700; color:var(--brown); margin-bottom:0.6rem; line-height:1.5; }
+        .lp-topic-card p { font-size:1.02rem; line-height:1.9; color:rgba(100,13,21,0.62); font-weight:300; }
+        .lp-audience { padding:4rem 5rem 5rem; }
+        .lp-audience-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:0.9fr 1.1fr; gap:4rem; align-items:center; }
+        .lp-audience-img { border-radius:20px; overflow:hidden; box-shadow:0 24px 56px rgba(100,13,21,0.1); border:1px solid rgba(100,13,21,0.08); }
+        .lp-audience-img img { width:100%; display:block; filter:brightness(0.95) saturate(0.85); transition:all 0.6s; }
+        .lp-audience-img:hover img { filter:brightness(1) saturate(1); transform:scale(1.03); }
+        .lp-audience-text h2 { font-size:clamp(1.8rem,3vw,2.4rem); font-weight:800; color:var(--brown); margin-bottom:1.2rem; line-height:1.4; }
+        .lp-audience-text p { font-size:1.3rem; line-height:1.95; color:rgba(100,13,21,0.78); font-weight:400; }
+        .lp-cta { padding:4rem 5rem 6rem; }
+        .lp-cta-inner { max-width:700px; margin:0 auto; text-align:center; background:linear-gradient(180deg, rgba(245,234,224,0.98) 0%, rgba(236,237,230,0.98) 100%); border-radius:28px; padding:3.5rem; border:1px solid rgba(100,13,21,0.08); box-shadow:0 24px 60px rgba(100,13,21,0.08); position:relative; overflow:hidden; }
+        .lp-cta-inner::before { content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%; background:radial-gradient(circle at 30% 30%, rgba(225,213,201,0.35), transparent 50%); }
+        .lp-cta-icon { font-size:3rem; margin-bottom:1rem; position:relative; z-index:2; }
+        .lp-cta-inner h2 { position:relative; z-index:2; font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; color:var(--brown); margin-bottom:0.8rem; }
+        .lp-cta-inner p { position:relative; z-index:2; font-size:1.1rem; line-height:1.9; color:rgba(100,13,21,0.65); font-weight:300; margin-bottom:2rem; max-width:480px; margin-left:auto; margin-right:auto; }
+        .lp-cta-btn { position:relative; z-index:2; display:inline-block; padding:0.95rem 2.5rem; background:var(--brown); color:var(--cream); border-radius:100px; text-decoration:none; font-weight:700; font-size:1.05rem; transition:all 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow:0 16px 30px rgba(100,13,21,0.15); }
+        .lp-cta-btn:hover { transform:translateY(-3px); box-shadow:0 20px 40px rgba(100,13,21,0.22); background:#7a1520; }
+        .lp-cta-btn.secondary { background:transparent; color:var(--brown); border:2px solid rgba(100,13,21,0.2); box-shadow:none; }
+        .lp-cta-btn.secondary:hover { background:rgba(100,13,21,0.06); border-color:rgba(100,13,21,0.35); box-shadow:0 12px 28px rgba(100,13,21,0.08); }
+        .lp-footer { padding:2.5rem 5rem; border-top:1px solid rgba(100,13,21,0.08); color:rgba(100,13,21,0.5); }
+        .lp-footer-inner { display:flex; justify-content:space-between; align-items:center; }
+        .lp-footer-logo img { height:32px; width:auto; filter:brightness(0.35) saturate(1.2) sepia(0.6) hue-rotate(-15deg); opacity:0.8; }
+        .lp-footer-copy { text-align:center; padding-top:1.2rem; margin-top:1.2rem; border-top:1px solid rgba(100,13,21,0.06); font-size:0.78rem; }
+        .reveal { opacity:0; transform:translateY(50px); transition:opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
+        .reveal.active { opacity:1; transform:translateY(0); }
+        .reveal-scale { opacity:0; transform:scale(0.92); transition:opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
+        .reveal-scale.active { opacity:1; transform:scale(1); }
+        .stagger-1 { transition-delay:0.05s; } .stagger-2 { transition-delay:0.15s; }
+        .stagger-3 { transition-delay:0.25s; } .stagger-4 { transition-delay:0.35s; }
+        @media (max-width:1024px) {
+            .lp-nav { padding:1rem 2rem; }
+            .lp-hero-content { padding:0 2rem 3rem; }
+            .lp-overview { padding:3.5rem 2rem; }
+            .lp-overview-inner { grid-template-columns:1fr; gap:2rem; }
+            .lp-details { padding:0 2rem 3rem; }
+            .lp-details-inner { grid-template-columns:1fr; }
+            .lp-topics { padding:3rem 2rem; }
+            .lp-topics-grid { grid-template-columns:1fr; }
+            .lp-audience { padding:3rem 2rem; }
+            .lp-audience-inner { grid-template-columns:1fr; gap:2rem; }
+            .lp-cta { padding:3rem 2rem; }
+            .lp-cta-inner { padding:2.5rem 1.8rem; }
+            .lp-footer { padding:2rem 2rem; }
+            .lp-footer-inner { flex-direction:column; gap:1rem; }
+        }
+        @media (max-width:600px) {
+            .lp-hero { min-height:55vh; }
+            .lp-hero h1 { font-size:2rem; }
+        }
+    </style>
+</head>
+<body>
+<nav class="lp-nav" id="lpNav">
+    <a href="index.html" class="lp-nav-logo"><img src="Yara_logo_Sand.png" alt="Brains by Yara"></a>
+    <a href="index.html#lectures" class="lp-nav-back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>العودة للمحاضرات</a>
+</nav>
+<section class="lp-hero">
+    <div class="lp-hero-bg"><img src="drive-download-20260325T170126Z-1-001/العنف والجريمه.avif" alt="من الطفولة إلى الجريمة"></div>
+    <div class="lp-hero-content">
+        <div class="lp-hero-num">03</div>
+        <div class="lp-hero-en">The Violent Brain</div>
+        <h1>من الطفولة إلى الجريمة</h1>
+        <div class="lp-hero-sub">كيف يتشكّل الدماغ العنيف؟</div>
+        <div style="margin-top:1.2rem;"><span class="lp-hero-tag">للجمهور العام</span></div>
+    </div>
+</section>
+<section class="lp-overview">
+    <div class="lp-overview-inner">
+        <div class="lp-overview-text reveal">
+            <h2>عن هذه المحاضرة</h2>
+            <p>تشهد مجتمعاتنا ارتفاعًا مقلقًا في معدلات العنف والجريمة. غالبًا ما يُنظر إلى العنف على أنه مجرد قرار أخلاقي أو خيار فردي، لكن علم الأعصاب الحديث يشير إلى أن الصورة أكثر تعقيدًا. فالسلوك العنيف يتشكّل نتيجة تفاعل مستمر بين العوامل البيئية والاجتماعية وبين العوامل البيولوجية والعصبية التي تؤثر في تطور الدماغ ووظيفته.</p>
+            <p>في هذه المحاضرة سنحاول فهم كيف يمكن لهذه العوامل المختلفة أن تسهم في تشكيل السلوك العنيف، ولماذا قد يكون بعض الأفراد أكثر عرضة للسلوك العنيف من غيرهم. كما سنتناول ما تقوله الأبحاث العصبية حول الفروق في بنية ونشاط الدماغ بين الأشخاص ذوي السلوك العنيف وغير العنيفين، خصوصًا في المناطق المرتبطة بتنظيم الانفعالات، ضبط الاندفاع، واتخاذ القرار.</p>
+        </div>
+        <div class="lp-overview-img reveal stagger-2"><img src="drive-download-20260325T170126Z-1-001/العنف والجريمه.avif" alt="من الطفولة إلى الجريمة"></div>
+    </div>
+</section>
+<section class="lp-details">
+    <div class="lp-details-inner">
+        <div class="lp-detail-card reveal stagger-1"><div class="detail-label">المدة</div><div class="detail-value">60-90 دقيقة</div></div>
+        <div class="lp-detail-card reveal stagger-2"><div class="detail-label">الصيغة</div><div class="detail-value">محاضرة تفاعلية</div></div>
+        <div class="lp-detail-card reveal stagger-3"><div class="detail-label">جمهور الهدف</div><div class="detail-value">للجمهور العام</div></div>
+    </div>
+</section>
+<section class="lp-topics">
+    <div class="lp-topics-inner">
+        <h2 class="reveal">محاور المحاضرة</h2>
+        <p class="lp-topics-sub reveal">المواضيع الرئيسية التي سيتم تناولها خلال المحاضرة</p>
+        <div class="lp-topics-grid">
+            <div class="lp-topic-card reveal stagger-1"><h3>أكثر من «قرار» أو «خيار»</h3><p>لماذا لا يكفي النظر إلى العنف كمسألة أخلاقية فقط، وما الذي تضيفه قراءة علم الأعصاب.</p></div>
+            <div class="lp-topic-card reveal stagger-2"><h3>تفاعل البيئة والبيولوجيا</h3><p>كيف تندمج العوامل الاجتماعية والبيئية مع العوامل العصبية في تشكيل السلوك عبر الزمن.</p></div>
+            <div class="lp-topic-card reveal stagger-3"><h3>العرضة والاختلاف الفردي</h3><p>لماذا قد يتأثر أشخاص مختلفون بشكل مختلف حتى داخل ظروف متشابهة.</p></div>
+            <div class="lp-topic-card reveal stagger-4"><h3>ماذا تقول الأبحاث عن الدماغ؟</h3><p>نظرة على الفروق المحتملة في بنية ونشاط الدماغ بين سياقات مختلفة، مع التركيز على الانفعال والاندفاع والقرار.</p></div></div>
+    </div>
+</section>
+<section class="lp-audience">
+    <div class="lp-audience-inner">
+<div class="lp-audience-text reveal stagger-2"><h2>لمن هذه المحاضرة؟</h2><p>هذه المحاضرة موجّهة للجمهور العام وبشكل خاص للعاملين في المجال الاجتماعي والتربوي، والمعلمين، وأولياء الأمور.</p></div>
+    </div>
+</section>
+<section class="lp-cta"><div class="lp-cta-inner reveal-scale"><div class="lp-cta-icon">🎤</div><h2>هل ترغبون بحجز هذه المحاضرة؟</h2><p>هذه المحاضرة متاحة للحجز لفعاليات، مؤتمرات، مدارس، جامعات، ومؤسسات. تواصلوا معنا لتفاصيل أكثر.</p><a href="index.html#contact" class="lp-cta-btn">احجزوا المحاضرة الآن</a></div></section>
+<footer class="lp-footer">
+    <div class="lp-footer-inner"><div class="lp-footer-logo"><img src="Yara_logo_Sand.png" alt="Brains by Yara"></div></div>
+    <div class="lp-footer-copy">&copy; 2025 Brains by Yara — جميع الحقوق محفوظة</div>
+</footer>
+<script>
+    const nav = document.getElementById('lpNav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
+    const allReveals = document.querySelectorAll('.reveal, .reveal-scale');
+    const revObs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); revObs.unobserve(e.target); } });
+    }, { threshold: 0.07, rootMargin: '0px 0px -50px 0px' });
+    allReveals.forEach(el => revObs.observe(el));
+</script>
+</body>
+</html>
