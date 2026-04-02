@@ -118,7 +118,7 @@
         /* === COMBINED HERO + ABOUT === */
         .hero-about {
             min-height: 100vh; display: flex; align-items: center;
-            padding: 8rem 5rem 5rem; position: relative;
+            padding: 8rem 5rem 6rem; position: relative;
         }
         .hero-about-inner {
             display: grid; grid-template-columns: 0.42fr 0.58fr;
@@ -212,9 +212,10 @@
         @keyframes fadeUp { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
 
         .scroll-hint {
-            position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+            position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%);
             display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
             opacity: 0; animation: fadeUp 0.9s ease 1s forwards;
+            z-index: 1;
         }
         .scroll-hint span { font-size: 0.7rem; color: var(--brown); opacity: 0.55; letter-spacing: 1px; }
         .scroll-hint-line { width: 1px; height: 38px; background: linear-gradient(to bottom, var(--olive), transparent); animation: scrollPulse 2s ease-in-out infinite; }
@@ -850,7 +851,7 @@
         const h = document.querySelector('.hero-about-inner');
         if (h && window.scrollY < window.innerHeight) {
             h.style.transform = 'translateY(' + (window.scrollY * 0.12) + 'px)';
-            h.style.opacity = 1 - (window.scrollY / (window.innerHeight * 0.9));
+            h.style.opacity = Math.max(0.25, 1 - (window.scrollY / (window.innerHeight * 1.4)));
         }
     });
 </script>
