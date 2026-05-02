@@ -6,6 +6,14 @@ All notable changes to the **brainsbyara.com** website, organized by version and
 
 ---
 
+## [v1.0.9] — 2026-05-02
+
+### Changed
+- Replaced hero image: `yara_headshot.jpg` → `Yara_port_1.jpeg` (new portrait)
+- Updated alt text to canonical spelling "د. يارا إغباريّة"
+
+---
+
 ## [v1.0.8] — 2026-04-11
 
 ### Changed
