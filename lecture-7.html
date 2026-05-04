@@ -13,7 +13,8 @@
     <meta property="og:locale" content="ar_AR">
     <link rel="canonical" href="https://brainsbyara.com/lecture-7.html">
     <link rel="icon" type="image/png" href="Yara_logo_Sand.png">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="i18n.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&family=Heebo:wght@300;400;500;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root { --brown:#640D15; --khaki:#D6CBC1; --cream:#F5EAE0; --off-white:#ECEDE6; --near-black:#2f2326; }
         * { margin:0; padding:0; box-sizing:border-box; }
@@ -115,57 +116,61 @@
 <body>
 <nav class="lp-nav" id="lpNav">
     <a href="index.html" class="lp-nav-logo"><img src="Yara_logo_Sand.png" alt="Brains by Yara"></a>
-    <a href="index.html#lectures" class="lp-nav-back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>العودة للمحاضرات</a>
+    <a href="index.html#lectures" class="lp-nav-back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-i18n="lp.back">العودة للمحاضرات</span></a><div class="lang-switcher" style="margin-inline-start:1rem;">
+        <button data-lang-btn="ar">عربي</button>
+        <button data-lang-btn="he">עברית</button>
+        <button data-lang-btn="en">EN</button>
+    </div>
 </nav>
 <section class="lp-hero">
     <div class="lp-hero-bg"><img src="drive-download-20260325T170126Z-1-001/الصدمه.jpg" alt="كيف تغيّر الصدمة الدماغ؟"></div>
     <div class="lp-hero-content">
         <div class="lp-hero-num">07</div>
         <div class="lp-hero-en">Trauma &amp; The Brain</div>
-        <h1>كيف تغيّر الصدمة الدماغ؟</h1>
-        <div class="lp-hero-sub">العلم وراء آثار التجارب المؤلمة</div>
-        <div style="margin-top:1.2rem;"><span class="lp-hero-tag">للجمهور العام</span></div>
+        <h1 data-i18n="l7.title">كيف تغيّر الصدمة الدماغ؟</h1>
+        <div class="lp-hero-sub" data-i18n="l7.subtitle">العلم وراء آثار التجارب المؤلمة</div>
+        <div style="margin-top:1.2rem;"><span class="lp-hero-tag" data-i18n="tag.public">للجمهور العام</span></div>
     </div>
 </section>
 <section class="lp-overview">
     <div class="lp-overview-inner">
         <div class="lp-overview-text reveal">
-            <h2>عن هذه المحاضرة</h2>
-            <p>تعيش مجتمعاتنا في المنطقة في ظل أحداث وتجارب قاسية قد تترك آثارًا عميقة على الأفراد والأجيال، إذ يمكن للتجارب الصادمة أن تخلّف بصمات نفسية وعصبية تستمر لفترات طويلة.</p>
-            <p>أظهرت أبحاث علم الأعصاب أن الصدمة لا تؤثر فقط في الحالة النفسية، بل يمكن أن تؤثر أيضًا في بنية الدماغ ووظيفته، خاصة في المناطق المرتبطة بالذاكرة، وتنظيم العواطف، والاستجابة للخطر.</p>
-            <p>في هذه المحاضرة سنستكشف كيف يستجيب الدماغ للتجارب الصادمة، ولماذا قد تستمر آثارها لدى بعض الأشخاص أكثر من غيرهم. كما سنتعرّف على الدور الذي تلعبه شبكات الدماغ في الذاكرة العاطفية، والخوف، وتنظيم التوتر.</p>
-            <p>الهدف من هذا الطرح هو فهم كيف تؤثر الصدمة في الدماغ، وكيف يمكن لهذا الفهم العلمي أن يساعد في تطوير طرق أفضل للدعم والتعافي.</p>
+            <h2 data-i18n="lp.overview.title">عن هذه المحاضرة</h2>
+            <p data-i18n="l7.overview.1">تعيش مجتمعاتنا في المنطقة في ظل أحداث وتجارب قاسية قد تترك آثارًا عميقة على الأفراد والأجيال، إذ يمكن للتجارب الصادمة أن تخلّف بصمات نفسية وعصبية تستمر لفترات طويلة.</p>
+            <p data-i18n="l7.overview.2">أظهرت أبحاث علم الأعصاب أن الصدمة لا تؤثر فقط في الحالة النفسية، بل يمكن أن تؤثر أيضًا في بنية الدماغ ووظيفته، خاصة في المناطق المرتبطة بالذاكرة، وتنظيم العواطف، والاستجابة للخطر.</p>
+            <p data-i18n="l7.overview.3">في هذه المحاضرة سنستكشف كيف يستجيب الدماغ للتجارب الصادمة، ولماذا قد تستمر آثارها لدى بعض الأشخاص أكثر من غيرهم. كما سنتعرّف على الدور الذي تلعبه شبكات الدماغ في الذاكرة العاطفية، والخوف، وتنظيم التوتر.</p>
+            <p data-i18n="l7.overview.4">الهدف من هذا الطرح هو فهم كيف تؤثر الصدمة في الدماغ، وكيف يمكن لهذا الفهم العلمي أن يساعد في تطوير طرق أفضل للدعم والتعافي.</p>
         </div>
         <div class="lp-overview-img reveal stagger-2"><img src="drive-download-20260325T170126Z-1-001/الصدمه.jpg" alt="كيف تغيّر الصدمة الدماغ؟"></div>
     </div>
 </section>
 <section class="lp-details">
     <div class="lp-details-inner">
-        <div class="lp-detail-card reveal stagger-1"><div class="detail-label">المدة</div><div class="detail-value">60-90 دقيقة</div></div>
-        <div class="lp-detail-card reveal stagger-2"><div class="detail-label">الصيغة</div><div class="detail-value">محاضرة تفاعلية</div></div>
-        <div class="lp-detail-card reveal stagger-3"><div class="detail-label">جمهور الهدف</div><div class="detail-value">للجمهور العام</div></div>
+        <div class="lp-detail-card reveal stagger-1"><div class="detail-label" data-i18n="lp.detail.duration">المدة</div><div class="detail-value" data-i18n="lp.detail.duration.val">60-90 دقيقة</div></div>
+        <div class="lp-detail-card reveal stagger-2"><div class="detail-label" data-i18n="lp.detail.format">الصيغة</div><div class="detail-value" data-i18n="lp.detail.format.val">محاضرة تفاعلية</div></div>
+        <div class="lp-detail-card reveal stagger-3"><div class="detail-label" data-i18n="lp.detail.audience">جمهور الهدف</div><div class="detail-value" data-i18n="tag.public">للجمهور العام</div></div>
     </div>
 </section>
 <section class="lp-topics">
     <div class="lp-topics-inner">
-        <h2 class="reveal">محاور المحاضرة</h2>
-        <p class="lp-topics-sub reveal">المواضيع الرئيسية التي سيتم تناولها خلال المحاضرة</p>
+        <h2 class="reveal" data-i18n="lp.topics.title">محاور المحاضرة</h2>
+        <p class="lp-topics-sub reveal" data-i18n="lp.topics.subtitle">المواضيع الرئيسية التي سيتم تناولها خلال المحاضرة</p>
         <div class="lp-topics-grid">
-            <div class="lp-topic-card reveal stagger-1"><h3>بصمات تدوم</h3><p>كيف قد تترك التجارب الصادمة أثرًا نفسيًا وعصبيًا يمتد عبر الزمن.</p></div>
-            <div class="lp-topic-card reveal stagger-2"><h3>بنية الدماغ والاستجابة للخطر</h3><p>لماذا تتأثر مناطق الذاكرة والعاطفة والتهيّب للخطر بشكل خاص بعد الصدمة.</p></div>
-            <div class="lp-topic-card reveal stagger-3"><h3>لماذا يختلف الأثر؟</h3><p>عوامل تساعد على تفسير استمرار الآثار لدى بعض الأشخاص دون غيرهم.</p></div>
-            <div class="lp-topic-card reveal stagger-4"><h3>شبكات الذاكرة والخوف والتوتر</h3><p>قراءة مبسطة لما يعنيه «تنظيم» التوتر في الدماغ في سياق الدعم والتعافي.</p></div></div>
+            <div class="lp-topic-card reveal stagger-1"><h3 data-i18n="l7.t1.h">بصمات تدوم</h3><p data-i18n="l7.t1.b">كيف قد تترك التجارب الصادمة أثرًا نفسيًا وعصبيًا يمتد عبر الزمن.</p></div>
+            <div class="lp-topic-card reveal stagger-2"><h3 data-i18n="l7.t2.h">بنية الدماغ والاستجابة للخطر</h3><p data-i18n="l7.t2.b">لماذا تتأثر مناطق الذاكرة والعاطفة والتهيّب للخطر بشكل خاص بعد الصدمة.</p></div>
+            <div class="lp-topic-card reveal stagger-3"><h3 data-i18n="l7.t3.h">لماذا يختلف الأثر؟</h3><p data-i18n="l7.t3.b">عوامل تساعد على تفسير استمرار الآثار لدى بعض الأشخاص دون غيرهم.</p></div>
+            <div class="lp-topic-card reveal stagger-4"><h3 data-i18n="l7.t4.h">شبكات الذاكرة والخوف والتوتر</h3><p data-i18n="l7.t4.b">قراءة مبسطة لما يعنيه «تنظيم» التوتر في الدماغ في سياق الدعم والتعافي.</p></div></div>
     </div>
 </section>
 <section class="lp-audience">
     <div class="lp-audience-inner">
-<div class="lp-audience-text reveal stagger-2"><h2>لمن هذه المحاضرة؟</h2><p>هذه المحاضرة موجّهة للجمهور العام وبشكل خاص للعاملين في المجالات النفسية والاجتماعية والمعلمين.</p></div>
+<div class="lp-audience-text reveal stagger-2"><h2 data-i18n="lp.audience.title">لمن هذه المحاضرة؟</h2><p data-i18n="l7.audience">هذه المحاضرة موجّهة للجمهور العام وبشكل خاص للعاملين في المجالات النفسية والاجتماعية والمعلمين.</p></div>
     </div>
 </section>
-<section class="lp-cta"><div class="lp-cta-inner reveal-scale"><div class="lp-cta-icon">🎤</div><h2>هل ترغبون بحجز هذه المحاضرة؟</h2><p>هذه المحاضرة متاحة للحجز لفعاليات، مؤتمرات، مدارس، جامعات، ومؤسسات. تواصلوا معنا لتفاصيل أكثر.</p><a href="index.html#contact" class="lp-cta-btn">احجزوا المحاضرة الآن</a></div></section>
+<section class="lp-cta"><div class="lp-cta-inner reveal-scale"><div class="lp-cta-icon">🎤</div><h2 data-i18n="lp.cta.host">هل ترغبون بحجز هذه المحاضرة؟</h2><p data-i18n="lp.cta.host.body">هذه المحاضرة متاحة للحجز لفعاليات، مؤتمرات، مدارس، جامعات، ومؤسسات. تواصلوا معنا لتفاصيل أكثر.</p><a href="index.html#contact" class="lp-cta-btn" data-i18n="lp.cta.book">احجزوا المحاضرة الآن</a></div></section>
 <footer class="lp-footer">
     <div class="lp-footer-inner"><div class="lp-footer-logo"><img src="Yara_logo_Sand.png" alt="Brains by Yara"></div></div>
-    <div class="lp-footer-copy">&copy; 2025 Brains by Yara — جميع الحقوق محفوظة</div>
+    <div class="lp-footer-copy" data-i18n="footer.copy">&copy; 2025 Brains by Yara — جميع الحقوق محفوظة</div>
 </footer>
 <script>
     const nav = document.getElementById('lpNav');
@@ -176,5 +181,6 @@
     }, { threshold: 0.07, rootMargin: '0px 0px -50px 0px' });
     allReveals.forEach(el => revObs.observe(el));
 </script>
+<script src="i18n.js"></script>
 </body>
 </html>

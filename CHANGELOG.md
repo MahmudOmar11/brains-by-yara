@@ -6,6 +6,24 @@ All notable changes to the **brainsbyara.com** website, organized by version and
 
 ---
 
+## [v1.0.10] — 2026-05-04
+
+### Added
+- **Multilingual support** (Arabic / Hebrew / English) — proofread by Yara
+- Floating language switcher in nav with `localStorage` persistence
+- `i18n.js` — centralized translation dictionary (180+ keys)
+- `i18n.css` — language-switcher styles + RTL/LTR overrides + Heebo (Hebrew) and Inter (English) fonts
+- All 10 pages translated: index + 8 lectures + success
+- Heebo and Inter fonts loaded from Google Fonts
+
+### Changed
+- Updated official name spelling consistently across all 3 languages:
+  - Arabic: `د. يارا إغباريّة` (no change)
+  - Hebrew: `ד"ר יארה אגבאריה`
+  - English: `Dr. Yara Agbaria`
+
+---
+
 ## [v1.0.9] — 2026-05-02
 
 ### Changed

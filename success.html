@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تم الإرسال — Brains by Yara</title>
+    <title>Brains by Yara</title>
     <link rel="icon" type="image/png" href="Yara_logo_Sand.png">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Heebo:wght@300;400;500;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="i18n.css">
     <style>
         :root { --brown:#640D15; --cream:#F5EAE0; --off-white:#ECEDE6; --near-black:#2f2326; }
         * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family:'Tajawal',sans-serif; background:var(--off-white); color:var(--near-black); min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:2rem; }
+        body { font-family:'Tajawal',sans-serif; background:var(--off-white); color:var(--near-black); min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:2rem; position:relative; }
+        .lang-bar { position: absolute; top: 1.5rem; inset-inline-start: 1.5rem; }
+        .lang-bar .lang-switcher { background: rgba(100,13,21,0.06); border-color: rgba(100,13,21,0.10); }
+        .lang-bar .lang-switcher button { color: rgba(100,13,21,0.62); }
+        .lang-bar .lang-switcher button:hover { color: #640D15; background: rgba(100,13,21,0.08); }
+        .lang-bar .lang-switcher button.active { background: #640D15; color: #F5EAE0; }
         .success-icon { font-size:4rem; margin-bottom:1.5rem; }
         h1 { font-size:2rem; font-weight:800; color:var(--brown); margin-bottom:0.8rem; }
         p { font-size:1.1rem; color:rgba(47,35,38,0.7); margin-bottom:2rem; max-width:400px; }
@@ -18,9 +24,17 @@
     </style>
 </head>
 <body>
+    <div class="lang-bar">
+        <div class="lang-switcher">
+            <button data-lang-btn="ar">عربي</button>
+            <button data-lang-btn="he">עברית</button>
+            <button data-lang-btn="en">EN</button>
+        </div>
+    </div>
     <div class="success-icon">✓</div>
-    <h1>تم إرسال طلبكم بنجاح</h1>
-    <p>شكرًا لتواصلكم! سنتواصل معكم في أقرب وقت لمناقشة التفاصيل وإرسال عرض سعر</p>
-    <a href="/">العودة للصفحة الرئيسية</a>
+    <h1 data-i18n="success.title">تم إرسال طلبكم بنجاح</h1>
+    <p data-i18n="success.body">شكرًا لتواصلكم! سنتواصل معكم في أقرب وقت لمناقشة التفاصيل وإرسال عرض سعر</p>
+    <a href="index.html" data-i18n="success.back">العودة للصفحة الرئيسية</a>
+    <script src="i18n.js"></script>
 </body>
 </html>

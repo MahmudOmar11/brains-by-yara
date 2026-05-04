@@ -1,0 +1,86 @@
+/* Brains by Yara — i18n shared styles */
+
+/* Language switcher (sits inside nav) */
+.lang-switcher {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    margin-inline-start: 1rem;
+    padding: 0.2rem;
+    background: rgba(245, 234, 224, 0.12);
+    border-radius: 100px;
+    border: 1px solid rgba(245, 234, 224, 0.18);
+}
+.lang-switcher button {
+    background: transparent;
+    border: none;
+    color: rgba(245, 234, 224, 0.62);
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.32rem 0.7rem;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 0.5px;
+}
+.lang-switcher button:hover { color: #F5EAE0; background: rgba(245,234,224,0.08); }
+.lang-switcher button.active {
+    background: #F5EAE0;
+    color: #640D15;
+}
+
+/* Mobile lang switcher inside hamburger menu */
+.nav-links .lang-switcher-mobile {
+    display: none;
+    margin-top: 1.5rem;
+}
+@media (max-width: 1024px) {
+    .lang-switcher { display: none; }
+    .nav-links.mobile-open .lang-switcher-mobile { display: flex; }
+}
+
+/* When body is in English, switch to a Latin font for body text */
+html[lang="en"] body { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; }
+html[lang="en"] .nav-links a,
+html[lang="en"] .lecture-card h3,
+html[lang="en"] .section-title,
+html[lang="en"] .hero-content h1,
+html[lang="en"] .lp-hero h1,
+html[lang="en"] button,
+html[lang="en"] input,
+html[lang="en"] textarea,
+html[lang="en"] select {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Hebrew uses Heebo (Google font) */
+html[lang="he"] body { font-family: 'Heebo', 'Tajawal', sans-serif; }
+html[lang="he"] input,
+html[lang="he"] textarea,
+html[lang="he"] select,
+html[lang="he"] button {
+    font-family: 'Heebo', 'Tajawal', sans-serif;
+}
+
+/* LTR fixes when in English */
+html[dir="ltr"] body { text-align: left; }
+html[dir="ltr"] .form-group input,
+html[dir="ltr"] .form-group textarea,
+html[dir="ltr"] .form-group select,
+html[dir="ltr"] .modal input,
+html[dir="ltr"] .modal textarea {
+    direction: ltr;
+    text-align: left;
+}
+html[dir="ltr"] .nav-links a::after { right: auto; left: 0; }
+html[dir="ltr"] .scroll-hint { left: 50%; }
+html[dir="ltr"] .hero-image-badge { left: auto; right: -18px; }
+html[dir="ltr"] .hero-image-ring { right: auto; left: -20px; }
+html[dir="ltr"] .lecture-card-num { right: auto; left: 0.8rem; }
+html[dir="ltr"] .modal-close { left: auto; right: 1.1rem; }
+
+/* Smooth font swap */
+body, h1, h2, h3, p, button, input, select, textarea {
+    transition: font-family 0.2s ease;
+}
